@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,520;9..144,640;9..144,700&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-sans: "Source Sans 3", "Segoe UI", sans-serif;
+
+  --color-bg: #cfed64;
+  --color-surface: #f0f8ff;
+  --color-ink: #14241c;
+  --color-paper: #ffffff;
+  --color-muted: #3e5346;
+  --color-primary: #1ea330;
+  --color-primary-deep: #0f5c22;
+  --color-accent: #0c6a24;
+  --color-accent-fill: #1ea330;
+  --color-line: #d5e6c4;
+  --color-soft: #e7f6c4;
+
+  --radius-card: 1.25rem;
+  --spacing-hero: 32rem;
+  --spacing-hero-lg: 38rem;
+}
+
+@layer base {
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-bg);
+    background-image: url("/images/floresta.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-size: 1.0625rem;
+    line-height: 1.55;
+  }
+
+  .titulo1,
+  .inte-1 {
+    position: relative;
+    transition: transform 200ms ease;
+  }
+
+  .titulo1:hover,
+  .inte-1:hover {
+    z-index: 1;
+    transform: scale(1.05);
+  }
+
+  ::selection {
+    background: var(--color-primary);
+    color: var(--color-paper);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 3px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
