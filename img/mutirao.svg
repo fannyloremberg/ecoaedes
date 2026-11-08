@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 420">
+  <rect width="800" height="420" fill="#cfed64"/>
+  <rect y="320" width="800" height="100" fill="#6b7f71"/>
+  <g>
+    <circle cx="200" cy="150" r="32" fill="#8d5524"/><rect x="165" y="185" width="70" height="110" rx="20" fill="#ff9800"/>
+    <rect x="170" y="290" width="22" height="60" fill="#14241c"/><rect x="208" y="290" width="22" height="60" fill="#14241c"/>
+  </g>
+  <g>
+    <circle cx="380" cy="140" r="32" fill="#f1c27d"/><rect x="345" y="175" width="70" height="120" rx="20" fill="#ff9800"/>
+    <rect x="350" y="290" width="22" height="60" fill="#14241c"/><rect x="388" y="290" width="22" height="60" fill="#14241c"/>
+    <path d="M415 200 L470 250" stroke="#f1c27d" stroke-width="14" stroke-linecap="round"/>
+  </g>
+  <rect x="455" y="240" width="90" height="100" rx="8" fill="#0f5c22"/>
+  <circle cx="620" cy="320" r="45" fill="#14241c"/><circle cx="620" cy="320" r="20" fill="#6b7f71"/>
+  <rect x="480" y="215" width="20" height="40" rx="6" fill="#bfe3ff" stroke="#14241c" stroke-width="2"/>
+  <rect x="510" y="210" width="20" height="44" rx="6" fill="#bfe3ff" stroke="#14241c" stroke-width="2"/>
+  <text x="500" y="300" font-family="Arial" font-size="20" font-weight="700" text-anchor="middle" fill="#ffffff">COLETA</text>
+</svg>

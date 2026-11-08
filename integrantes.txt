@@ -1,0 +1,9 @@
+EcoAedes — DEV. Front-End (Unicid) — Prof. Paulo Fratta
+2ª entrega — 09/11/2026
+
+Integrantes:
+- Iago Araujo da Silva Santos — RGM: 1750024957
+- Stefani Cezar Vilela — RGM: 50015818
+
+Repositório: https://github.com/fannyloremberg/ecoaedes
+Site: https://fannyloremberg.github.io/ecoaedes/ (após ativar o GitHub Pages)

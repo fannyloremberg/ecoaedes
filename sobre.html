@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A ONG — EcoAedes</title>
+<meta name="description" content="Quem é a EcoAedes, o que fazemos, nosso público e os ODS ligados ao projeto.">
+<meta name="theme-color" content="#0f5c22">
+<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap">
+<link rel="stylesheet" href="css/style.css">
+<!-- main.js fica no head para aplicar o alto contraste antes de a página aparecer -->
+<script src="js/main.js"></script>
+</head>
+<body>
+<a class="pular" href="#conteudo">Ir para o conteúdo</a>
+
+<!-- ===== CABEÇALHO (igual em todas as páginas) ===== -->
+<header class="topo">
+  <div class="topo__interno">
+    <a class="logo" href="index.html"><img src="img/logo.svg" alt="Logotipo do EcoAedes (gota verde)" width="36" height="36"><span>EcoAedes</span></a>
+    <button class="contraste-botao" type="button" aria-pressed="false">Alto contraste</button>
+    <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-principal">Menu</button>
+    <nav class="menu" id="menu-principal" aria-label="Menu principal">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html" aria-current="page">A ONG</a></li>
+        <li><a href="mosquito.html">O mosquito</a></li>
+        <li><a href="doencas.html">Doenças</a></li>
+        <li><a href="prevencao.html">Prevenção</a></li>
+        <li><a href="noticias.html">Notícias</a></li>
+        <li><a href="multimidia.html">Multimídia</a></li>
+        <li><a href="doe.html">Apoie</a></li>
+        <li><a href="voluntario.html">Seja voluntário</a></li>
+        <li><a href="orcamento_hospedagem.html">Hospedagem</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<section class="bloco duas-colunas" aria-labelledby="titulo-sobre">
+  <div>
+    <p class="etiqueta">01 — Apresentação</p>
+    <h1 id="titulo-sobre">Conscientizar é o nosso objetivo</h1>
+    <p>A EcoAedes é uma organização sem fins lucrativos. Existimos para explicar, em linguagem de calçada, o que o <i>Aedes aegypti</i> faz com uma cidade: falta na escola, fila na unidade de saúde, salário que não entra e, no pior desenlace, um óbito que poderia ter sido evitado.</p>
+    <p>Atuamos com palestras informativas e ações comunitárias, em parceria com agentes de combate às endemias. Não substituímos o SUS. Caminhamos ao lado de quem já visita as casas.</p>
+  </div>
+  <img src="img/palestra.svg" alt="Ilustração de uma educadora apontando para um cartaz com a frase “Sem água parada, sem mosquito” para três vizinhos, um deles em cadeira de rodas." width="800" height="420">
+</section>
+
+<section class="bloco" aria-labelledby="titulo-acoes">
+  <h2 id="titulo-acoes">O que fazemos</h2>
+  <div class="grade">
+    <article class="cartao"><h3>Palestras informativas</h3><p>Levamos para escolas, praças e associações o que a ciência já sabe: como o mosquito nasce, o que ele transmite e o que cada casa pode fazer.</p></article>
+    <article class="cartao"><h3>Campanhas comunitárias</h3><p>Mutirões de bairro, cartazes e conversas de porta em porta. A dengue se combate melhor quando o quarteirão inteiro participa.</p></article>
+    <article class="cartao"><h3>Coleta de resíduos</h3><p>Pneus, garrafas e potes viram criadouro depois da chuva. Recolher esse material corta o ciclo antes do ovo virar adulto.</p></article>
+    <article class="cartao"><h3>Apoio aos agentes de endemias</h3><p>Os agentes de saúde entram nas casas todos os dias. A EcoAedes caminha junto: explica, registra criadouros e reforça o que o SUS já orienta.</p></article>
+  </div>
+</section>
+
+<section class="bloco bloco--escuro duas-colunas" aria-labelledby="titulo-luta">
+  <img src="img/mutirao.svg" alt="Ilustração de dois voluntários de colete laranja recolhendo garrafas e um pneu numa rua, ao lado de uma caixa de coleta." width="800" height="420">
+  <div>
+    <p class="etiqueta">Pelo que lutamos</p>
+    <h2 id="titulo-luta">Menos água parada. Menos aula perdida. Menos luto evitável.</h2>
+    <p>O mosquito não escolhe bairro, mas a falta de informação e de coleta pesa mais onde a casa já é apertada. Por isso a EcoAedes fala com vizinho, não só com cartaz: o criadouro está no quintal de cada um.</p>
+  </div>
+</section>
+
+<section class="bloco" aria-labelledby="titulo-publico">
+  <h2 id="titulo-publico">Para quem falamos</h2>
+  <ul>
+    <li><strong>Moradores de bairros com muitos criadouros</strong>, especialmente famílias com crianças, gestantes e idosos.</li>
+    <li><strong>Estudantes e professores</strong> de escolas públicas, que multiplicam a informação em casa.</li>
+    <li><strong>Pessoas com deficiência (PCD)</strong>: o site tem modo de alto contraste, navegação por teclado, textos alternativos nas imagens, legendas no vídeo e transcrição do áudio. Nas ações presenciais, quem precisar de adaptação pode avisar no <a href="voluntario.html">formulário</a>.</li>
+    <li><strong>Agentes comunitários e de endemias</strong>, que podem usar o material nas visitas.</li>
+  </ul>
+</section>
+
+<section class="bloco" id="ods" aria-labelledby="titulo-ods-sobre">
+  <p class="etiqueta">Sustentabilidade</p>
+  <h2 id="titulo-ods-sobre">Objetivos de Desenvolvimento Sustentável (ODS)</h2>
+  <div class="ods">
+    <article class="cartao"><h3>ODS 3 — Saúde e Bem-estar</h3><p>Prevenir dengue, zika e chikungunya diminui casos graves, internações e mortes evitáveis.</p><p><a href="https://brasil.un.org/pt-br/sdgs/3">ODS 3 na ONU Brasil</a></p></article>
+    <article class="cartao"><h3>ODS 6 — Água Potável e Saneamento</h3><p>Caixa d’água tampada e água armazenada com segurança são, ao mesmo tempo, saneamento e prevenção.</p><p><a href="https://brasil.un.org/pt-br/sdgs/6">ODS 6 na ONU Brasil</a></p></article>
+    <article class="cartao"><h3>ODS 11 — Cidades e Comunidades Sustentáveis</h3><p>Coleta de resíduos (pneus, garrafas, entulho) e mutirões deixam o bairro mais limpo e com menos criadouros.</p><p><a href="https://brasil.un.org/pt-br/sdgs/11">ODS 11 na ONU Brasil</a></p></article>
+  </div>
+</section>
+
+<section class="bloco" aria-labelledby="titulo-equipe">
+  <h2 id="titulo-equipe">Equipe</h2>
+  <ul class="grade">
+    <li class="cartao">Iago Araujo da Silva Santos</li>
+    <li class="cartao">Stefani Cezar Vilela</li>
+  </ul>
+</section>
+</main>
+
+<!-- ===== RODAPÉ (igual em todas as páginas) ===== -->
+<footer class="rodape">
+  <div class="rodape__interno">
+    <div>
+      <p><strong>EcoAedes</strong> — ONG de conscientização sobre o <i>Aedes aegypti</i>.</p>
+      <p>Projeto acadêmico da disciplina DEV. Front-End (Unicid). Material educativo: não substitui consulta nem orientação da unidade de saúde.</p>
+    </div>
+    <div>
+      <p><strong>Navegação rápida</strong></p>
+      <ul>
+        <li><a href="prevencao.html">Varredura da casa</a></li>
+        <li><a href="voluntario.html">Seja voluntário</a></li>
+        <li><a href="doe.html">Apoie a EcoAedes</a></li>
+      </ul>
+    </div>
+    <div>
+      <p><strong>Fontes oficiais</strong></p>
+      <ul>
+        <li><a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/d/dengue">Ministério da Saúde — Dengue</a></li>
+        <li><a href="https://brasil.un.org/pt-br/sdgs">ONU Brasil — Objetivos de Desenvolvimento Sustentável</a></li>
+      </ul>
+      <p>© <span id="ano-atual">2026</span> Equipe EcoAedes.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

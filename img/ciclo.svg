@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 260" font-family="Arial, sans-serif">
+  <rect width="800" height="260" fill="#f6fbe9"/>
+  <rect x="0" y="160" width="800" height="100" fill="#bfe3ff"/>
+  <g font-size="22" font-weight="700" fill="#14241c" text-anchor="middle">
+    <text x="100" y="40">1. Ovo</text><text x="300" y="40">2. Larva</text><text x="500" y="40">3. Pupa</text><text x="700" y="40">4. Adulto</text>
+  </g>
+  <g fill="#14241c"><ellipse cx="85" cy="140" rx="12" ry="5"/><ellipse cx="110" cy="132" rx="12" ry="5"/><ellipse cx="100" cy="150" rx="12" ry="5"/></g>
+  <rect x="60" y="100" width="80" height="12" fill="#6b7f71"/>
+  <path d="M285 190 q15 -30 30 0 q-15 40 -30 0" fill="#3e5346"/><path d="M300 210 L300 240" stroke="#3e5346" stroke-width="6"/>
+  <path d="M480 200 a22 22 0 1 1 30 10 q-10 18 -30 -10z" fill="#3e5346"/>
+  <ellipse cx="700" cy="110" rx="40" ry="12" fill="#14241c"/><circle cx="655" cy="105" r="12" fill="#14241c"/>
+  <ellipse cx="700" cy="80" rx="35" ry="12" fill="#ffffff" stroke="#14241c" stroke-width="3"/>
+  <g stroke="#0f5c22" stroke-width="5" fill="none" marker-end="url(#seta)">
+    <path d="M160 100 L240 100"/><path d="M360 100 L440 100"/><path d="M560 100 L630 100"/>
+  </g>
+  <defs><marker id="seta" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#0f5c22"/></marker></defs>
+  <text x="400" y="250" font-size="18" text-anchor="middle" fill="#14241c">De 7 a 10 dias, com calor e água parada</text>
+</svg>

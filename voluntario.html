@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Seja voluntário — EcoAedes</title>
+<meta name="description" content="Formulário de contato e inscrição de voluntários da EcoAedes.">
+<meta name="theme-color" content="#0f5c22">
+<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap">
+<link rel="stylesheet" href="css/style.css">
+<!-- main.js fica no head para aplicar o alto contraste antes de a página aparecer -->
+<script src="js/main.js"></script>
+</head>
+<body>
+<a class="pular" href="#conteudo">Ir para o conteúdo</a>
+
+<!-- ===== CABEÇALHO (igual em todas as páginas) ===== -->
+<header class="topo">
+  <div class="topo__interno">
+    <a class="logo" href="index.html"><img src="img/logo.svg" alt="Logotipo do EcoAedes (gota verde)" width="36" height="36"><span>EcoAedes</span></a>
+    <button class="contraste-botao" type="button" aria-pressed="false">Alto contraste</button>
+    <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-principal">Menu</button>
+    <nav class="menu" id="menu-principal" aria-label="Menu principal">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">A ONG</a></li>
+        <li><a href="mosquito.html">O mosquito</a></li>
+        <li><a href="doencas.html">Doenças</a></li>
+        <li><a href="prevencao.html">Prevenção</a></li>
+        <li><a href="noticias.html">Notícias</a></li>
+        <li><a href="multimidia.html">Multimídia</a></li>
+        <li><a href="doe.html">Apoie</a></li>
+        <li><a href="voluntario.html" aria-current="page">Seja voluntário</a></li>
+        <li><a href="orcamento_hospedagem.html">Hospedagem</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<section class="bloco duas-colunas" aria-labelledby="titulo-voluntario">
+  <div>
+    <p class="etiqueta">09 — Contato e voluntariado</p>
+    <h1 id="titulo-voluntario">Seja voluntário</h1>
+    <p>Preencha o formulário para participar de mutirões, palestras ou para falar com a equipe.</p>
+    <p class="texto-suave">Os campos com * são obrigatórios. Seu rascunho fica salvo neste navegador enquanto você digita e é apagado ao enviar.</p>
+    <p class="texto-suave"><strong>Aviso:</strong> este formulário é demonstrativo (projeto acadêmico). Os dados não são enviados para nenhum servidor.</p>
+    <p id="aviso-rascunho" aria-live="polite"></p>
+  </div>
+
+  <form id="form-voluntario" novalidate>
+    <div class="campo">
+      <label for="nome">Nome completo *</label>
+      <input type="text" id="nome" name="nome" autocomplete="name" aria-describedby="erro-nome">
+      <p class="msg-erro" id="erro-nome" aria-live="polite"></p>
+    </div>
+    <div class="campo">
+      <label for="email">E-mail *</label>
+      <input type="email" id="email" name="email" autocomplete="email" aria-describedby="dica-email erro-email">
+      <p class="dica" id="dica-email">Exemplo: nome@email.com</p>
+      <p class="msg-erro" id="erro-email" aria-live="polite"></p>
+    </div>
+    <div class="campo">
+      <label for="telefone">Telefone (opcional)</label>
+      <input type="tel" id="telefone" name="telefone" autocomplete="tel" aria-describedby="dica-telefone erro-telefone">
+      <p class="dica" id="dica-telefone">Com DDD, exemplo: (11) 91234-5678</p>
+      <p class="msg-erro" id="erro-telefone" aria-live="polite"></p>
+    </div>
+    <div class="campo">
+      <label for="cidade">Cidade *</label>
+      <input type="text" id="cidade" name="cidade" autocomplete="address-level2" aria-describedby="erro-cidade">
+      <p class="msg-erro" id="erro-cidade" aria-live="polite"></p>
+    </div>
+    <div class="campo">
+      <label for="area">Como quer ajudar? *</label>
+      <select id="area" name="area" aria-describedby="erro-area">
+        <option value="">Escolha uma opção</option>
+        <option value="mutirao">Mutirões de limpeza e coleta</option>
+        <option value="palestra">Palestras em escolas e associações</option>
+        <option value="acessivel">Material acessível (Libras, áudio, texto simples)</option>
+        <option value="contato">Só quero falar com a equipe</option>
+      </select>
+      <p class="msg-erro" id="erro-area" aria-live="polite"></p>
+    </div>
+    <div class="campo">
+      <fieldset id="grupo-disponibilidade" aria-describedby="erro-disponibilidade">
+        <legend>Disponibilidade *</legend>
+        <div class="opcao"><input type="radio" id="disp-manha" name="disponibilidade" value="manha"><label for="disp-manha">Manhã</label></div>
+        <div class="opcao"><input type="radio" id="disp-tarde" name="disponibilidade" value="tarde"><label for="disp-tarde">Tarde</label></div>
+        <div class="opcao"><input type="radio" id="disp-fim" name="disponibilidade" value="fim-de-semana"><label for="disp-fim">Fim de semana</label></div>
+      </fieldset>
+      <p class="msg-erro" id="erro-disponibilidade" aria-live="polite"></p>
+    </div>
+    <div class="campo">
+      <label for="mensagem">Mensagem *</label>
+      <textarea id="mensagem" name="mensagem" rows="4" aria-describedby="erro-mensagem"></textarea>
+      <p class="msg-erro" id="erro-mensagem" aria-live="polite"></p>
+    </div>
+    <div class="campo">
+      <label for="acessibilidade">Precisa de alguma adaptação para participar? (opcional)</label>
+      <textarea id="acessibilidade" name="acessibilidade" rows="2" aria-describedby="dica-acessibilidade"></textarea>
+      <p class="dica" id="dica-acessibilidade">Por exemplo: intérprete de Libras, local acessível para cadeira de rodas, material em letra grande.</p>
+    </div>
+    <div class="campo">
+      <div class="opcao"><input type="checkbox" id="aceite" name="aceite" aria-describedby="erro-aceite"><label for="aceite">Li o aviso: este formulário é uma demonstração acadêmica. *</label></div>
+      <p class="msg-erro" id="erro-aceite" aria-live="polite"></p>
+    </div>
+    <div class="acoes">
+      <button class="botao" type="submit">Enviar inscrição</button>
+      <button class="botao botao--claro" type="reset">Limpar</button>
+    </div>
+    <p class="msg-sucesso" id="msg-sucesso" role="status" tabindex="-1"></p>
+  </form>
+</section>
+</main>
+
+<!-- ===== RODAPÉ (igual em todas as páginas) ===== -->
+<footer class="rodape">
+  <div class="rodape__interno">
+    <div>
+      <p><strong>EcoAedes</strong> — ONG de conscientização sobre o <i>Aedes aegypti</i>.</p>
+      <p>Projeto acadêmico da disciplina DEV. Front-End (Unicid). Material educativo: não substitui consulta nem orientação da unidade de saúde.</p>
+    </div>
+    <div>
+      <p><strong>Navegação rápida</strong></p>
+      <ul>
+        <li><a href="prevencao.html">Varredura da casa</a></li>
+        <li><a href="voluntario.html">Seja voluntário</a></li>
+        <li><a href="doe.html">Apoie a EcoAedes</a></li>
+      </ul>
+    </div>
+    <div>
+      <p><strong>Fontes oficiais</strong></p>
+      <ul>
+        <li><a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/d/dengue">Ministério da Saúde — Dengue</a></li>
+        <li><a href="https://brasil.un.org/pt-br/sdgs">ONU Brasil — Objetivos de Desenvolvimento Sustentável</a></li>
+      </ul>
+      <p>© <span id="ano-atual">2026</span> Equipe EcoAedes.</p>
+    </div>
+  </div>
+</footer>
+<script src="js/formulario.js"></script>
+</body>
+</html>
