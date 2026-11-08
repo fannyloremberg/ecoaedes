@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prevenção — EcoAedes</title>
+<meta name="description" content="Varredura de 10 minutos na casa (o progresso fica salvo) e quiz sobre o Aedes aegypti.">
+<meta name="theme-color" content="#0f5c22">
+<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap">
+<link rel="stylesheet" href="css/style.css">
+<!-- main.js fica no head para aplicar o alto contraste antes de a página aparecer -->
+<script src="js/main.js"></script>
+</head>
+<body>
+<a class="pular" href="#conteudo">Ir para o conteúdo</a>
+
+<!-- ===== CABEÇALHO (igual em todas as páginas) ===== -->
+<header class="topo">
+  <div class="topo__interno">
+    <a class="logo" href="index.html"><img src="img/logo.svg" alt="Logotipo do EcoAedes (gota verde)" width="36" height="36"><span>EcoAedes</span></a>
+    <button class="contraste-botao" type="button" aria-pressed="false">Alto contraste</button>
+    <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-principal">Menu</button>
+    <nav class="menu" id="menu-principal" aria-label="Menu principal">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">A ONG</a></li>
+        <li><a href="mosquito.html">O mosquito</a></li>
+        <li><a href="doencas.html">Doenças</a></li>
+        <li><a href="prevencao.html" aria-current="page">Prevenção</a></li>
+        <li><a href="noticias.html">Notícias</a></li>
+        <li><a href="multimidia.html">Multimídia</a></li>
+        <li><a href="doe.html">Apoie</a></li>
+        <li><a href="voluntario.html">Seja voluntário</a></li>
+        <li><a href="orcamento_hospedagem.html">Hospedagem</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<section class="bloco duas-colunas" aria-labelledby="titulo-prevencao">
+  <div>
+    <p class="etiqueta">05 — Prevenção</p>
+    <h1 id="titulo-prevencao">A varredura de dez minutos</h1>
+    <p>Marque o que já está resolvido na sua casa. O progresso fica salvo neste navegador: dá para continuar depois.</p>
+    <img src="img/criadouros.svg" alt="Ilustração de criadouros comuns no quintal: pneu com água, prato de vaso com água, garrafa jogada e caixa d’água destampada." width="800" height="420">
+    <p>Repelente, manga comprida e tela na janela protegem a pele, mas não substituem a água eliminada. Receba o agente de endemias: a visita é o mapa do criadouro.</p>
+  </div>
+  <div>
+    <h2>Checklist da casa</h2>
+    <p id="texto-progresso" aria-live="polite">0 de 8 itens revisados (0%).</p>
+    <div class="progresso" aria-hidden="true"><span id="barra-progresso"></span></div>
+    <ul class="checklist">
+    <li><label for="item-caixa"><input type="checkbox" id="item-caixa"><span><strong>Caixa d’água tampada</strong><br>Tampa justa, sem fresta.</span></label></li>
+    <li><label for="item-prato"><input type="checkbox" id="item-prato"><span><strong>Pratos de vaso sem água</strong><br>Troque a água por areia até a borda, ou lave o prato toda semana.</span></label></li>
+    <li><label for="item-calha"><input type="checkbox" id="item-calha"><span><strong>Calhas e lajes desobstruídas</strong><br>Folha acumulada vira poça.</span></label></li>
+    <li><label for="item-pneu"><input type="checkbox" id="item-pneu"><span><strong>Pneus sem água</strong><br>Fure, cubra ou leve ao descarte. Um pneu guarda água por meses.</span></label></li>
+    <li><label for="item-garrafa"><input type="checkbox" id="item-garrafa"><span><strong>Garrafas e potes virados</strong><br>Guarde de boca para baixo, em local coberto, ou descarte.</span></label></li>
+    <li><label for="item-ralo"><input type="checkbox" id="item-ralo"><span><strong>Ralos com tela ou fechados</strong><br>Ralo pouco usado também cria larva.</span></label></li>
+    <li><label for="item-piscina"><input type="checkbox" id="item-piscina"><span><strong>Piscina tratada ou coberta</strong><br>Água parada sem cloro é berçário.</span></label></li>
+    <li><label for="item-lixo"><input type="checkbox" id="item-lixo"><span><strong>Lixo tampado e no dia certo</strong><br>Saco aberto junta chuva.</span></label></li>
+    </ul>
+    <button class="botao botao--claro" type="button" id="recomecar">Recomeçar a varredura</button>
+  </div>
+</section>
+
+<section class="bloco" aria-labelledby="titulo-quiz">
+  <p class="etiqueta">Quiz</p>
+  <h2 id="titulo-quiz">Verdadeiro ou falso?</h2>
+  <p id="placar" aria-live="polite">Responda às perguntas abaixo.</p>
+  <div class="cartao quiz-pergunta" data-certa="falso" data-explica="A via principal é a picada da fêmea do Aedes aegypti infectada. Abraçar alguém doente não transmite o vírus.">
+    <h3>1. A dengue passa de uma pessoa para outra pelo ar ou pelo contato.</h3>
+    <div class="acoes"><button class="botao botao--claro" type="button" data-valor="verdadeiro">Verdadeiro</button><button class="botao botao--claro" type="button" data-valor="falso">Falso</button></div>
+    <p class="quiz-resposta" aria-live="polite"></p>
+  </div>
+  <div class="cartao quiz-pergunta" data-certa="verdadeiro" data-explica="Diferente do pernilongo comum, que pica à noite, o Aedes é diurno.">
+    <h3>2. O Aedes costuma picar de dia, sobretudo de manhã cedo e no fim da tarde.</h3>
+    <div class="acoes"><button class="botao botao--claro" type="button" data-valor="verdadeiro">Verdadeiro</button><button class="botao botao--claro" type="button" data-valor="falso">Falso</button></div>
+    <p class="quiz-resposta" aria-live="polite"></p>
+  </div>
+  <div class="cartao quiz-pergunta" data-certa="verdadeiro" data-explica="O Aedes prefere água limpa e parada: vaso, calha, garrafa, caixa d’água.">
+    <h3>3. Qualquer recipiente com água parada pode virar criadouro, mesmo que a água pareça limpa.</h3>
+    <div class="acoes"><button class="botao botao--claro" type="button" data-valor="verdadeiro">Verdadeiro</button><button class="botao botao--claro" type="button" data-valor="falso">Falso</button></div>
+    <p class="quiz-resposta" aria-live="polite"></p>
+  </div>
+  <div class="cartao quiz-pergunta" data-certa="falso" data-explica="AAS e anti-inflamatórios aumentam o risco de sangramento na dengue. Hidratação e avaliação na unidade de saúde vêm primeiro.">
+    <h3>4. Aspirina ou ibuprofeno são a melhor escolha para a dor da dengue, sem falar com um profissional.</h3>
+    <div class="acoes"><button class="botao botao--claro" type="button" data-valor="verdadeiro">Verdadeiro</button><button class="botao botao--claro" type="button" data-valor="falso">Falso</button></div>
+    <p class="quiz-resposta" aria-live="polite"></p>
+  </div>
+  <div class="cartao quiz-pergunta" data-certa="verdadeiro" data-explica="A infecção na gestação está ligada à síndrome congênita da zika, que inclui a microcefalia.">
+    <h3>5. A zika pode afetar o bebê quando a gestante é infectada.</h3>
+    <div class="acoes"><button class="botao botao--claro" type="button" data-valor="verdadeiro">Verdadeiro</button><button class="botao botao--claro" type="button" data-valor="falso">Falso</button></div>
+    <p class="quiz-resposta" aria-live="polite"></p>
+  </div>
+  <div class="cartao quiz-pergunta" data-certa="falso" data-explica="A dor nas articulações pode durar semanas ou meses e impedir trabalho e estudo.">
+    <h3>6. A chikungunya se resume a uma febre curta, sem consequência depois.</h3>
+    <div class="acoes"><button class="botao botao--claro" type="button" data-valor="verdadeiro">Verdadeiro</button><button class="botao botao--claro" type="button" data-valor="falso">Falso</button></div>
+    <p class="quiz-resposta" aria-live="polite"></p>
+  </div>
+</section>
+</main>
+
+<!-- ===== RODAPÉ (igual em todas as páginas) ===== -->
+<footer class="rodape">
+  <div class="rodape__interno">
+    <div>
+      <p><strong>EcoAedes</strong> — ONG de conscientização sobre o <i>Aedes aegypti</i>.</p>
+      <p>Projeto acadêmico da disciplina DEV. Front-End (Unicid). Material educativo: não substitui consulta nem orientação da unidade de saúde.</p>
+    </div>
+    <div>
+      <p><strong>Navegação rápida</strong></p>
+      <ul>
+        <li><a href="prevencao.html">Varredura da casa</a></li>
+        <li><a href="voluntario.html">Seja voluntário</a></li>
+        <li><a href="doe.html">Apoie a EcoAedes</a></li>
+      </ul>
+    </div>
+    <div>
+      <p><strong>Fontes oficiais</strong></p>
+      <ul>
+        <li><a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/d/dengue">Ministério da Saúde — Dengue</a></li>
+        <li><a href="https://brasil.un.org/pt-br/sdgs">ONU Brasil — Objetivos de Desenvolvimento Sustentável</a></li>
+      </ul>
+      <p>© <span id="ano-atual">2026</span> Equipe EcoAedes.</p>
+    </div>
+  </div>
+</footer>
+<script src="js/checklist.js"></script>
+<script src="js/quiz.js"></script>
+</body>
+</html>

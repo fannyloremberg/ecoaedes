@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Apoie — EcoAedes</title>
+<meta name="description" content="Formas de apoiar a EcoAedes: doação de materiais, tempo, divulgação e Pix (exemplo).">
+<meta name="theme-color" content="#0f5c22">
+<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap">
+<link rel="stylesheet" href="css/style.css">
+<!-- main.js fica no head para aplicar o alto contraste antes de a página aparecer -->
+<script src="js/main.js"></script>
+</head>
+<body>
+<a class="pular" href="#conteudo">Ir para o conteúdo</a>
+
+<!-- ===== CABEÇALHO (igual em todas as páginas) ===== -->
+<header class="topo">
+  <div class="topo__interno">
+    <a class="logo" href="index.html"><img src="img/logo.svg" alt="Logotipo do EcoAedes (gota verde)" width="36" height="36"><span>EcoAedes</span></a>
+    <button class="contraste-botao" type="button" aria-pressed="false">Alto contraste</button>
+    <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-principal">Menu</button>
+    <nav class="menu" id="menu-principal" aria-label="Menu principal">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">A ONG</a></li>
+        <li><a href="mosquito.html">O mosquito</a></li>
+        <li><a href="doencas.html">Doenças</a></li>
+        <li><a href="prevencao.html">Prevenção</a></li>
+        <li><a href="noticias.html">Notícias</a></li>
+        <li><a href="multimidia.html">Multimídia</a></li>
+        <li><a href="doe.html" aria-current="page">Apoie</a></li>
+        <li><a href="voluntario.html">Seja voluntário</a></li>
+        <li><a href="orcamento_hospedagem.html">Hospedagem</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<section class="bloco duas-colunas" aria-labelledby="titulo-doe">
+  <div>
+    <p class="etiqueta">08 — Apoie</p>
+    <h1 id="titulo-doe">Cada tampa conta</h1>
+    <p>A EcoAedes vive de gente que doa tempo, materiais e divulgação. Escolha a forma que cabe na sua rotina.</p>
+  </div>
+  <img src="img/doacao.svg" alt="Ilustração de um coração verde sustentado por uma mão, com uma gota de água branca no centro." width="600" height="360">
+</section>
+
+<section class="bloco" aria-labelledby="titulo-formas">
+  <h2 id="titulo-formas">Formas de ajudar</h2>
+  <div class="grade">
+    <article class="cartao"><h3>Doe materiais</h3><ul><li>Sacos de lixo resistentes</li><li>Luvas de proteção</li><li>Areia para pratos de vaso</li><li>Telas para ralos e caixas d’água</li></ul></article>
+    <article class="cartao"><h3>Doe seu tempo</h3><p>Ajude em mutirões, palestras ou na produção de material acessível.</p><p><a href="voluntario.html">Seja voluntário</a></p></article>
+    <article class="cartao"><h3>Divulgue</h3><p>Compartilhe o site e a <a href="prevencao.html">varredura da casa</a> com a família, a escola e o condomínio.</p></article>
+  </div>
+</section>
+
+<section class="bloco" aria-labelledby="titulo-pix">
+  <h2 id="titulo-pix">Doação em dinheiro (Pix)</h2>
+  <div class="pix">
+    <p><strong>EXEMPLO — chave fictícia.</strong> Este é um projeto acadêmico: <strong>não faça transferências</strong>.</p>
+    <p>Chave Pix (exemplo): <code>exemplo-pix@ecoaedes.exemplo</code></p>
+  </div>
+  <h3>Transparência (como seria em uma ONG real)</h3>
+  <ul>
+    <li>Prestação de contas pública, com relatório das doações recebidas e gastos.</li>
+    <li>Recursos aplicados em material de mutirão, impressão de cartazes e transporte de voluntários.</li>
+  </ul>
+</section>
+</main>
+
+<!-- ===== RODAPÉ (igual em todas as páginas) ===== -->
+<footer class="rodape">
+  <div class="rodape__interno">
+    <div>
+      <p><strong>EcoAedes</strong> — ONG de conscientização sobre o <i>Aedes aegypti</i>.</p>
+      <p>Projeto acadêmico da disciplina DEV. Front-End (Unicid). Material educativo: não substitui consulta nem orientação da unidade de saúde.</p>
+    </div>
+    <div>
+      <p><strong>Navegação rápida</strong></p>
+      <ul>
+        <li><a href="prevencao.html">Varredura da casa</a></li>
+        <li><a href="voluntario.html">Seja voluntário</a></li>
+        <li><a href="doe.html">Apoie a EcoAedes</a></li>
+      </ul>
+    </div>
+    <div>
+      <p><strong>Fontes oficiais</strong></p>
+      <ul>
+        <li><a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/d/dengue">Ministério da Saúde — Dengue</a></li>
+        <li><a href="https://brasil.un.org/pt-br/sdgs">ONU Brasil — Objetivos de Desenvolvimento Sustentável</a></li>
+      </ul>
+      <p>© <span id="ano-atual">2026</span> Equipe EcoAedes.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

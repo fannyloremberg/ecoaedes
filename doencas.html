@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Doenças — EcoAedes</title>
+<meta name="description" content="Dengue, zika e chikungunya: sinais, cuidados, vacina e o impacto dos casos no Brasil.">
+<meta name="theme-color" content="#0f5c22">
+<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap">
+<link rel="stylesheet" href="css/style.css">
+<!-- main.js fica no head para aplicar o alto contraste antes de a página aparecer -->
+<script src="js/main.js"></script>
+</head>
+<body>
+<a class="pular" href="#conteudo">Ir para o conteúdo</a>
+
+<!-- ===== CABEÇALHO (igual em todas as páginas) ===== -->
+<header class="topo">
+  <div class="topo__interno">
+    <a class="logo" href="index.html"><img src="img/logo.svg" alt="Logotipo do EcoAedes (gota verde)" width="36" height="36"><span>EcoAedes</span></a>
+    <button class="contraste-botao" type="button" aria-pressed="false">Alto contraste</button>
+    <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-principal">Menu</button>
+    <nav class="menu" id="menu-principal" aria-label="Menu principal">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">A ONG</a></li>
+        <li><a href="mosquito.html">O mosquito</a></li>
+        <li><a href="doencas.html" aria-current="page">Doenças</a></li>
+        <li><a href="prevencao.html">Prevenção</a></li>
+        <li><a href="noticias.html">Notícias</a></li>
+        <li><a href="multimidia.html">Multimídia</a></li>
+        <li><a href="doe.html">Apoie</a></li>
+        <li><a href="voluntario.html">Seja voluntário</a></li>
+        <li><a href="orcamento_hospedagem.html">Hospedagem</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<section class="bloco" aria-labelledby="titulo-doencas">
+  <p class="etiqueta">03 — As doenças</p>
+  <h1 id="titulo-doencas">Três vírus, um mosquito, impactos diferentes</h1>
+  <p class="texto-suave">Clique no nome de cada doença para mostrar ou esconder a explicação.</p>
+
+  <div class="sanfona__item">
+    <h2><button class="sanfona__botao" type="button" aria-expanded="true" aria-controls="painel-dengue">Dengue</button></h2>
+    <div class="sanfona__painel" id="painel-dengue">
+      <p>Causada por quatro sorotipos do vírus (DENV-1 a DENV-4). Ter tido um deles não protege dos outros, e uma segunda infecção pode ser mais grave.</p>
+      <ul>
+        <li>Febre alta de início súbito (39 °C a 40 °C)</li>
+        <li>Dor de cabeça forte e dor atrás dos olhos</li>
+        <li>Dor no corpo e nas articulações, cansaço</li>
+        <li>Manchas vermelhas, enjoo e falta de apetite</li>
+      </ul>
+      <p>Não existe antiviral específico. O cuidado é hidratação, repouso e reavaliação médica.</p>
+    </div>
+  </div>
+
+  <div class="sanfona__item">
+    <h2><button class="sanfona__botao" type="button" aria-expanded="false" aria-controls="painel-zika">Zika</button></h2>
+    <div class="sanfona__painel" id="painel-zika" hidden>
+      <p>Em geral mais branda que a dengue, mas se a gestante se infecta, o vírus pode causar a síndrome congênita da zika, inclusive microcefalia.</p>
+      <ul>
+        <li>Febre baixa ou ausente</li>
+        <li>Manchas no corpo e coceira</li>
+        <li>Vermelhidão nos olhos, sem pus</li>
+        <li>Dor leve nas articulações</li>
+      </ul>
+      <p>Gestantes devem fazer o pré-natal, usar repelente indicado pelo profissional de saúde e eliminar criadouros em casa.</p>
+    </div>
+  </div>
+
+  <div class="sanfona__item">
+    <h2><button class="sanfona__botao" type="button" aria-expanded="false" aria-controls="painel-chikungunya">Chikungunya</button></h2>
+    <div class="sanfona__painel" id="painel-chikungunya" hidden>
+      <p>O nome vem de uma língua da África oriental e quer dizer “aquela que se curva”, pela dor que dobra as articulações. A dor pode durar semanas ou meses.</p>
+      <ul>
+        <li>Febre alta de começo rápido</li>
+        <li>Dor articular intensa, muitas vezes nas mãos e nos pés</li>
+        <li>Inchaço nas juntas, dor muscular e dor de cabeça</li>
+        <li>Manchas na pele em parte dos casos</li>
+      </ul>
+      <p>Não há tratamento específico. Analgésicos e repouso seguem orientação médica.</p>
+    </div>
+  </div>
+
+  <div class="alerta" role="note">
+    <p><strong>Sinais de alarme não esperam.</strong> Dor forte na barriga, vômito que não para, sangramento, tontura ou falta de ar: procure a urgência. Não use AAS nem anti-inflamatório por conta própria: na dengue eles aumentam o risco de sangramento.</p>
+  </div>
+</section>
+
+<section class="bloco" aria-labelledby="titulo-vacina">
+  <h2 id="titulo-vacina">Vacina contra a dengue</h2>
+  <p>Em dezembro de 2025 a Anvisa publicou o registro da vacina contra a dengue do Instituto Butantan (Butantan-DV), tetravalente e em dose única, indicada para pessoas de 12 a 59 anos e ofertada exclusivamente pelo SUS.</p>
+  <p>Quem pode tomar e onde muda conforme a estratégia do Ministério da Saúde: a resposta certa está na unidade de saúde do seu bairro. A vacina soma, mas não dispensa acabar com o criadouro.</p>
+  <p class="fonte">Fontes: <a href="https://www.gov.br/anvisa/pt-br/assuntos/noticias-anvisa/2025/anvisa-publica-registro-da-vacina-contra-a-dengue-do-butantan">Anvisa — registro da vacina do Butantan</a>; <a href="https://www.gov.br/saude/pt-br/vacinacao/publicacoes/guia-tecnico-operacional-da-vacina-dengue-atenuada-do-instituto-butantan">Ministério da Saúde — Guia técnico-operacional da vacina</a>.</p>
+</section>
+
+<section class="bloco" aria-labelledby="titulo-casos">
+  <p class="etiqueta">04 — Casos e impacto</p>
+  <h2 id="titulo-casos">Casos prováveis de dengue no Brasil (semanas 1 a 47)</h2>
+  <ul class="barras">
+    <li><span>2024: 6.484.966 casos prováveis</span><div class="trilho" aria-hidden="true"><div class="preenchido barra-2024"></div></div></li>
+    <li><span>2025: 1.633.997 casos prováveis (queda de 75%)</span><div class="trilho" aria-hidden="true"><div class="preenchido barra-2025"></div></div></li>
+  </ul>
+  <p>No mesmo período, os óbitos confirmados passaram de 6.321 (2024) para 1.728 (2025). Ainda assim, o Ministério da Saúde emitiu alerta de tendência de aumento de casos, com destaque para o sorotipo DENV-3, para 2025/2026.</p>
+  <h3>O que esses números fazem com a sociedade</h3>
+  <ul>
+    <li>Estudante falta prova. Trabalhador falta turno. A conta do mês não espera a febre passar.</li>
+    <li>Unidades de saúde e hospitais lotam justamente no período em que outras urgências continuam existindo.</li>
+    <li>A chikungunya deixa dor que dura meses. A zika, na gestação, pode marcar uma vida inteira.</li>
+  </ul>
+  <p class="fonte">Fonte: Ministério da Saúde, <a href="https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/estudos-e-notas-informativas/2025/nota-informativa-no-12-2025-cgarb-dedt-svsa-ms.pdf">Nota Informativa nº 12/2025-CGARB/DEDT/SVSA/MS</a>.</p>
+</section>
+</main>
+
+<!-- ===== RODAPÉ (igual em todas as páginas) ===== -->
+<footer class="rodape">
+  <div class="rodape__interno">
+    <div>
+      <p><strong>EcoAedes</strong> — ONG de conscientização sobre o <i>Aedes aegypti</i>.</p>
+      <p>Projeto acadêmico da disciplina DEV. Front-End (Unicid). Material educativo: não substitui consulta nem orientação da unidade de saúde.</p>
+    </div>
+    <div>
+      <p><strong>Navegação rápida</strong></p>
+      <ul>
+        <li><a href="prevencao.html">Varredura da casa</a></li>
+        <li><a href="voluntario.html">Seja voluntário</a></li>
+        <li><a href="doe.html">Apoie a EcoAedes</a></li>
+      </ul>
+    </div>
+    <div>
+      <p><strong>Fontes oficiais</strong></p>
+      <ul>
+        <li><a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/d/dengue">Ministério da Saúde — Dengue</a></li>
+        <li><a href="https://brasil.un.org/pt-br/sdgs">ONU Brasil — Objetivos de Desenvolvimento Sustentável</a></li>
+      </ul>
+      <p>© <span id="ano-atual">2026</span> Equipe EcoAedes.</p>
+    </div>
+  </div>
+</footer>
+<script src="js/doencas.js"></script>
+</body>
+</html>

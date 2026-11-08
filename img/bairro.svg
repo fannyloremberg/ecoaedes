@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520">
+  <rect width="800" height="520" fill="#e7f6c4"/>
+  <circle cx="660" cy="100" r="56" fill="#ffd54a"/>
+  <path d="M0 360 Q200 300 400 350 T800 330 V520 H0z" fill="#9ed36a"/>
+  <rect x="0" y="430" width="800" height="90" fill="#6b7f71"/>
+  <rect x="0" y="468" width="800" height="8" fill="#f6fbe9"/>
+  <g>
+    <rect x="70" y="250" width="160" height="140" fill="#f6fbe9" stroke="#14241c" stroke-width="4"/>
+    <path d="M60 255 L150 180 L240 255z" fill="#b3261e" stroke="#14241c" stroke-width="4"/>
+    <rect x="130" y="320" width="40" height="70" fill="#0f5c22"/>
+    <rect x="90" y="280" width="30" height="30" fill="#bfe3ff" stroke="#14241c" stroke-width="3"/>
+    <rect x="180" y="280" width="30" height="30" fill="#bfe3ff" stroke="#14241c" stroke-width="3"/>
+  </g>
+  <g>
+    <rect x="300" y="220" width="190" height="170" fill="#fff3c4" stroke="#14241c" stroke-width="4"/>
+    <path d="M288 226 L395 150 L502 226z" fill="#0f5c22" stroke="#14241c" stroke-width="4"/>
+    <rect x="370" y="310" width="45" height="80" fill="#1ea330"/>
+    <rect x="320" y="250" width="36" height="36" fill="#bfe3ff" stroke="#14241c" stroke-width="3"/>
+    <rect x="432" y="250" width="36" height="36" fill="#bfe3ff" stroke="#14241c" stroke-width="3"/>
+    <rect x="330" y="200" width="60" height="22" fill="#2f80ed" stroke="#14241c" stroke-width="3"/>
+  </g>
+  <g>
+    <rect x="560" y="260" width="170" height="130" fill="#f6fbe9" stroke="#14241c" stroke-width="4"/>
+    <path d="M550 265 L645 195 L740 265z" fill="#1ea330" stroke="#14241c" stroke-width="4"/>
+    <rect x="620" y="320" width="40" height="70" fill="#0f5c22"/>
+  </g>
+  <g fill="#14241c">
+    <circle cx="180" cy="430" r="14"/><rect x="172" y="440" width="16" height="40" rx="6"/>
+    <circle cx="530" cy="425" r="14"/><rect x="522" y="435" width="16" height="45" rx="6"/>
+  </g>
+  <rect x="160" y="445" width="40" height="30" rx="4" fill="#1ea330"/>
+  <text x="180" y="466" font-family="Arial" font-size="14" font-weight="700" text-anchor="middle" fill="#ffffff">ECO</text>
+  <g fill="#2f80ed"><path d="M260 200c8 12 12 18 12 24a12 12 0 0 1-24 0c0-6 4-12 12-24z"/><path d="M530 150c6 9 9 14 9 18a9 9 0 0 1-18 0c0-4 3-9 9-18z"/></g>
+</svg>

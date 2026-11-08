@@ -1,0 +1,542 @@
+/* =========================================================
+   EcoAedes — folha de estilos única (vale para as 10 páginas)
+   Identidade visual: fundo lima, verdes da marca, títulos em
+   Fraunces e textos em Source Sans 3.
+   ========================================================= */
+
+/* ---------- 1. Variáveis: cores e medidas da marca ---------- */
+:root {
+  --fundo: #cfed64;        /* lima da marca (fundo da página) */
+  --superficie: #f6fbe9;   /* fundo claro dos blocos */
+  --papel: #ffffff;
+  --tinta: #14241c;        /* texto principal */
+  --suave: #3e5346;        /* texto secundário */
+  --verde: #1ea330;        /* verde da marca (detalhes grandes) */
+  --verde-texto: #0c6a24;  /* verde escuro para texto pequeno (contraste AA) */
+  --verde-escuro: #0f5c22; /* botões e rodapé */
+  --linha: #d5e6c4;
+  --erro: #b3261e;         /* vermelho dos erros do formulário */
+  --raio: 1.25rem;
+  --sombra: 0 6px 20px rgba(20, 36, 28, 0.12);
+  --fonte-titulo: "Fraunces", Georgia, "Times New Roman", serif;
+  --fonte-texto: "Source Sans 3", "Segoe UI", Arial, sans-serif;
+}
+
+/* ---------- 2. Modo alto contraste (ligado pelo botão, salvo no localStorage) ---------- */
+html.alto-contraste {
+  --fundo: #000000;
+  --superficie: #000000;
+  --papel: #000000;
+  --tinta: #ffffff;
+  --suave: #ffffff;
+  --verde: #ffff00;
+  --verde-texto: #ffff00;
+  --verde-escuro: #000000;
+  --linha: #ffffff;
+  --erro: #ff8a80;
+  --sombra: none;
+}
+html.alto-contraste a { color: #ffff00; }
+html.alto-contraste .botao,
+html.alto-contraste .cartao,
+html.alto-contraste .bloco { border: 2px solid #ffffff; }
+
+/* ---------- 3. Base ---------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--fundo);
+  color: var(--tinta);
+  font-family: var(--fonte-texto);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+
+img, video, iframe { max-width: 100%; }
+img { height: auto; display: block; }
+
+h1, h2, h3 {
+  font-family: var(--fonte-titulo);
+  line-height: 1.15;
+  margin: 0 0 0.6rem;
+}
+h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); }
+h2 { font-size: clamp(1.7rem, 3.5vw, 2.5rem); }
+h3 { font-size: 1.35rem; }
+
+p { margin: 0 0 1rem; }
+
+a { color: var(--verde-texto); text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 3px; }
+
+/* Foco visível para quem navega pelo teclado */
+:focus-visible {
+  outline: 3px solid var(--verde-texto);
+  outline-offset: 3px;
+}
+html.alto-contraste :focus-visible { outline-color: #ffff00; }
+
+/* Link "Ir para o conteúdo": escondido até receber foco */
+.pular {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 100;
+  background: var(--verde-escuro);
+  color: #ffffff;
+  padding: 0.6rem 1rem;
+  border-radius: 999px;
+  transition: top 0.2s ease;
+}
+.pular:focus { top: 1rem; }
+
+/* Texto só para leitor de tela */
+.so-leitor {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* ---------- 4. Cabeçalho e menu ---------- */
+.topo {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: var(--superficie);
+  border-bottom: 1px solid var(--linha);
+}
+.topo__interno {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0.7rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--fonte-titulo);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--tinta);
+  text-decoration: none;
+  margin-right: auto;
+}
+.logo img { width: 36px; height: 36px; }
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+.menu a {
+  display: block;
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  color: var(--tinta);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.menu a:hover { background: var(--linha); }
+/* Página atual (aria-current="page") fica destacada */
+.menu a[aria-current="page"] {
+  background: var(--verde-escuro);
+  color: #ffffff;
+}
+html.alto-contraste .menu a[aria-current="page"] {
+  background: #ffff00;
+  color: #000000;
+}
+
+.menu-botao,
+.contraste-botao {
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 2px solid var(--verde-escuro);
+  background: var(--papel);
+  color: var(--tinta);
+  border-radius: 999px;
+  padding: 0.45rem 0.9rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.menu-botao:hover,
+.contraste-botao:hover { background: var(--linha); }
+.contraste-botao[aria-pressed="true"] {
+  background: #ffff00;
+  color: #000000;
+  border-color: #ffff00;
+}
+/* O botão do menu só aparece no celular */
+.menu-botao { display: none; }
+
+/* ---------- 5. Estrutura e blocos ---------- */
+main {
+  max-width: 72rem;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+}
+.bloco {
+  background: var(--superficie);
+  border-radius: var(--raio);
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+  margin-bottom: 1.5rem;
+  box-shadow: var(--sombra);
+}
+.bloco--escuro {
+  background: var(--verde-escuro);
+  color: #ffffff;
+}
+.bloco--escuro a { color: #ffffff; }
+.etiqueta {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--verde-texto);
+  margin-bottom: 0.4rem;
+}
+.bloco--escuro .etiqueta { color: #e7f6c4; }
+.texto-suave { color: var(--suave); }
+.fonte { font-size: 0.9rem; color: var(--suave); }
+.bloco--escuro .fonte { color: #e7f6c4; }
+
+/* Destaque do topo (hero) */
+.destaque {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+.destaque img { border-radius: var(--raio); width: 100%; }
+
+/* Grades responsivas de cartões */
+.grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem;
+}
+.duas-colunas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: start;
+}
+.cartao {
+  background: var(--papel);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  padding: 1.25rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.cartao:hover { transform: translateY(-3px); box-shadow: var(--sombra); }
+.cartao h3 { margin-top: 0.4rem; }
+.cartao img { border-radius: 0.8rem; margin-bottom: 0.6rem; width: 100%; }
+
+/* Números (estatísticas) */
+.numeros {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 1rem;
+  margin: 1rem 0;
+}
+.numeros div {
+  background: var(--papel);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  padding: 1rem;
+}
+.numeros dt {
+  font-family: var(--fonte-titulo);
+  font-size: 2rem;
+  color: var(--verde-texto);
+}
+.numeros dd { margin: 0; color: var(--suave); }
+
+/* Barras simples para comparar anos */
+.barras { list-style: none; padding: 0; margin: 1rem 0; }
+.barras li { margin-bottom: 0.8rem; }
+.barras .trilho {
+  height: 1.2rem;
+  background: var(--linha);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.barras .preenchido {
+  height: 100%;
+  background: var(--verde-escuro);
+  border-radius: 999px;
+}
+html.alto-contraste .barras .preenchido { background: #ffff00; }
+.barra-2024 { width: 100%; }
+.barra-2025 { width: 25%; }
+
+/* Selos dos ODS */
+.ods { display: flex; flex-wrap: wrap; gap: 1rem; }
+.ods .cartao { flex: 1 1 14rem; border-left: 8px solid var(--verde); }
+
+/* ---------- 6. Botões e links de ação ---------- */
+.botao {
+  display: inline-block;
+  font: inherit;
+  font-weight: 700;
+  background: var(--verde-escuro);
+  color: #ffffff;
+  border: 2px solid var(--verde-escuro);
+  border-radius: 999px;
+  padding: 0.7rem 1.3rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+.botao:hover { background: var(--tinta); transform: translateY(-2px); }
+.botao--claro { background: var(--papel); color: var(--tinta); }
+.botao--claro:hover { background: var(--linha); }
+html.alto-contraste .botao { background: #000000; color: #ffff00; }
+.acoes { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1rem; }
+
+/* ---------- 7. Doenças (mostrar/ocultar) ---------- */
+.sanfona__botao {
+  width: 100%;
+  text-align: left;
+  font: inherit;
+  font-family: var(--fonte-titulo);
+  font-size: 1.3rem;
+  background: var(--papel);
+  color: var(--tinta);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  padding: 1rem 1.25rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+.sanfona__botao:hover { background: var(--linha); }
+.sanfona__botao::after { content: " +"; float: right; }
+.sanfona__botao[aria-expanded="true"]::after { content: " −"; }
+.sanfona__painel { padding: 1rem 1.25rem; }
+.sanfona__item { margin-bottom: 0.75rem; }
+.alerta {
+  border-left: 6px solid var(--erro);
+  background: var(--papel);
+  padding: 1rem;
+  border-radius: 0.8rem;
+}
+
+/* ---------- 8. Checklist da casa ---------- */
+.checklist { list-style: none; padding: 0; margin: 0; }
+.checklist li { margin-bottom: 0.5rem; }
+.checklist label {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+  background: var(--papel);
+  border: 1px solid var(--linha);
+  border-radius: 0.9rem;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+.checklist label:hover { border-color: var(--verde-escuro); }
+.checklist input { width: 1.3rem; height: 1.3rem; margin-top: 0.2rem; accent-color: var(--verde-escuro); }
+.progresso {
+  height: 0.8rem;
+  background: var(--linha);
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 0.5rem 0 1rem;
+}
+.progresso span {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--verde-escuro);
+  transition: width 0.3s ease;
+}
+html.alto-contraste .progresso span { background: #ffff00; }
+
+/* ---------- 9. Quiz ---------- */
+.quiz-pergunta { margin-bottom: 1rem; }
+.quiz-resposta { font-weight: 600; margin-top: 0.5rem; }
+
+/* ---------- 10. Notícias e filtro ---------- */
+.filtros { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+.filtro {
+  font: inherit;
+  font-weight: 600;
+  border: 2px solid var(--verde-escuro);
+  background: var(--papel);
+  color: var(--tinta);
+  border-radius: 999px;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.filtro[aria-pressed="true"] { background: var(--verde-escuro); color: #ffffff; }
+html.alto-contraste .filtro[aria-pressed="true"] { background: #ffff00; color: #000000; }
+.noticia time { font-size: 0.9rem; color: var(--suave); }
+.selo {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.1rem 0.6rem;
+  background: var(--linha);
+  color: var(--tinta);
+}
+.selo--exemplo { background: #fff3c4; color: #5a4300; }
+html.alto-contraste .selo,
+html.alto-contraste .selo--exemplo { background: #000000; color: #ffffff; border: 1px solid #ffffff; }
+.escondido { display: none; }
+
+/* ---------- 11. Multimídia ---------- */
+.video-caixa {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+.video-caixa iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: var(--raio);
+}
+video { width: 100%; border-radius: var(--raio); background: #000000; }
+audio { width: 100%; }
+
+/* ---------- 12. Doação ---------- */
+.pix {
+  border: 3px dashed var(--verde-escuro);
+  border-radius: var(--raio);
+  padding: 1rem;
+  background: var(--papel);
+}
+.pix code { font-size: 1.05rem; word-break: break-all; }
+
+/* ---------- 13. Formulário ---------- */
+.campo { margin-bottom: 1.1rem; }
+.campo label,
+.campo legend { display: block; font-weight: 700; margin-bottom: 0.3rem; }
+.campo input[type="text"],
+.campo input[type="email"],
+.campo input[type="tel"],
+.campo select,
+.campo textarea {
+  width: 100%;
+  font: inherit;
+  padding: 0.65rem 0.8rem;
+  border: 2px solid #6b7f71;
+  border-radius: 0.7rem;
+  background: var(--papel);
+  color: var(--tinta);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.campo input:focus,
+.campo select:focus,
+.campo textarea:focus { border-color: var(--verde-escuro); box-shadow: 0 0 0 3px rgba(30, 163, 48, 0.3); }
+.campo fieldset { border: 0; padding: 0; margin: 0; }
+.opcao { display: flex; gap: 0.5rem; align-items: center; margin: 0.2rem 0; }
+.opcao input { width: 1.2rem; height: 1.2rem; accent-color: var(--verde-escuro); }
+.dica { font-size: 0.9rem; color: var(--suave); margin: 0.2rem 0 0; }
+
+/* Campo com erro: borda vermelha em destaque */
+.campo .erro,
+.campo input.erro,
+.campo select.erro,
+.campo textarea.erro { border-color: var(--erro); box-shadow: 0 0 0 3px rgba(179, 38, 30, 0.25); }
+fieldset.erro { outline: 2px solid var(--erro); outline-offset: 6px; border-radius: 0.5rem; }
+.msg-erro { color: var(--erro); font-weight: 700; font-size: 0.95rem; margin: 0.3rem 0 0; min-height: 1.2em; }
+.msg-sucesso {
+  border-left: 6px solid var(--verde-escuro);
+  background: var(--papel);
+  padding: 1rem;
+  border-radius: 0.8rem;
+  font-weight: 600;
+}
+.msg-sucesso:empty { display: none; }
+
+/* ---------- 14. Tabelas (orçamento) ---------- */
+.tabela-rolagem { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; background: var(--papel); }
+caption { text-align: left; font-weight: 700; margin-bottom: 0.5rem; }
+th, td { border: 1px solid var(--linha); padding: 0.6rem; text-align: left; vertical-align: top; }
+th { background: var(--linha); }
+html.alto-contraste th { background: #000000; }
+
+/* ---------- 15. EcoBot (perguntas frequentes) ---------- */
+.ecobot__perguntas { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.ecobot__resposta {
+  margin-top: 1rem;
+  background: var(--papel);
+  border: 1px solid var(--linha);
+  border-radius: var(--raio);
+  padding: 1rem;
+  min-height: 3rem;
+}
+
+/* ---------- 16. Rodapé ---------- */
+.rodape {
+  background: var(--verde-escuro);
+  color: #ffffff;
+  margin-top: 2rem;
+}
+.rodape__interno {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+  gap: 1.5rem;
+}
+.rodape a { color: #ffffff; }
+.rodape ul { list-style: none; padding: 0; margin: 0; }
+.rodape p { margin-bottom: 0.5rem; }
+html.alto-contraste .rodape { border-top: 2px solid #ffffff; }
+
+/* ---------- 17. Responsivo: tablet e celular ---------- */
+@media (max-width: 900px) {
+  .destaque,
+  .duas-colunas { grid-template-columns: 1fr; }
+
+  /* No celular o menu vira lista vertical escondida */
+  .menu-botao { display: inline-block; }
+  .js .menu { display: none; width: 100%; }
+  .js .menu.aberto { display: block; }
+  .menu ul { flex-direction: column; }
+  .menu a { padding: 0.75rem 1rem; }
+}
+
+@media (max-width: 480px) {
+  body { font-size: 1rem; }
+  .contraste-botao { font-size: 0.8rem; padding: 0.4rem 0.6rem; }
+}
+
+/* ---------- 18. Menos movimento para quem pediu no sistema ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>O mosquito — EcoAedes</title>
+<meta name="description" content="Características e ciclo de vida do Aedes aegypti.">
+<meta name="theme-color" content="#0f5c22">
+<link rel="icon" href="img/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap">
+<link rel="stylesheet" href="css/style.css">
+<!-- main.js fica no head para aplicar o alto contraste antes de a página aparecer -->
+<script src="js/main.js"></script>
+</head>
+<body>
+<a class="pular" href="#conteudo">Ir para o conteúdo</a>
+
+<!-- ===== CABEÇALHO (igual em todas as páginas) ===== -->
+<header class="topo">
+  <div class="topo__interno">
+    <a class="logo" href="index.html"><img src="img/logo.svg" alt="Logotipo do EcoAedes (gota verde)" width="36" height="36"><span>EcoAedes</span></a>
+    <button class="contraste-botao" type="button" aria-pressed="false">Alto contraste</button>
+    <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu-principal">Menu</button>
+    <nav class="menu" id="menu-principal" aria-label="Menu principal">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="sobre.html">A ONG</a></li>
+        <li><a href="mosquito.html" aria-current="page">O mosquito</a></li>
+        <li><a href="doencas.html">Doenças</a></li>
+        <li><a href="prevencao.html">Prevenção</a></li>
+        <li><a href="noticias.html">Notícias</a></li>
+        <li><a href="multimidia.html">Multimídia</a></li>
+        <li><a href="doe.html">Apoie</a></li>
+        <li><a href="voluntario.html">Seja voluntário</a></li>
+        <li><a href="orcamento_hospedagem.html">Hospedagem</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="conteudo">
+
+<section class="bloco duas-colunas" aria-labelledby="titulo-mosquito">
+  <img src="img/mosquito.svg" alt="Ilustração de um mosquito preto com listras brancas no corpo e nas pernas, pousado sobre a grama." width="600" height="450">
+  <div>
+    <p class="etiqueta">02 — O mosquito</p>
+    <h1 id="titulo-mosquito"><i>Aedes aegypti</i>, o mesmo vetor de três vírus</h1>
+    <p>Preto, com listra branca em forma de lira no tórax e anéis brancos nas pernas. Vive perto de gente, dentro e em volta das casas. Transmite dengue, zika e chikungunya.</p>
+    <p>Só a fêmea pica, em geral de dia, no começo da manhã e no fim da tarde. Ela precisa de sangue para formar os ovos.</p>
+  </div>
+</section>
+
+<section class="bloco" aria-labelledby="titulo-ciclo">
+  <h2 id="titulo-ciclo">Ciclo de vida: do ovo ao adulto</h2>
+  <img src="img/ciclo.svg" alt="Esquema do ciclo de vida em quatro fases ligadas por setas: ovo na parede do recipiente, larva e pupa na água, mosquito adulto voando." width="800" height="260">
+  <ol class="grade">
+    <li class="cartao"><h3>Ovo</h3><p>A fêmea cola os ovos na parede do recipiente, acima da água. Eles sobrevivem meses secos e eclodem na próxima chuva.</p></li>
+    <li class="cartao"><h3>Larva</h3><p>Nasce na água parada e limpa — prato de vaso, calha, pneu, caixa destampada. Quatro estágios, em poucos dias.</p></li>
+    <li class="cartao"><h3>Pupa</h3><p>Ainda na água, não se alimenta. Em cerca de dois dias vira mosquito adulto. Por isso esvaziar o pote hoje já interrompe o ciclo.</p></li>
+    <li class="cartao"><h3>Adulto</h3><p>Voa perto das casas e procura sangue para os ovos. O ciclo recomeça na próxima água parada.</p></li>
+  </ol>
+  <p>Do ovo ao adulto, com calor e água, o ciclo fecha em sete a dez dias. É por isso que uma vistoria semanal muda o mapa do bairro. <a href="prevencao.html">Faça a varredura da sua casa</a>.</p>
+  <p class="fonte">Conteúdo baseado nas orientações do <a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/d/dengue">Ministério da Saúde — Dengue</a>.</p>
+</section>
+</main>
+
+<!-- ===== RODAPÉ (igual em todas as páginas) ===== -->
+<footer class="rodape">
+  <div class="rodape__interno">
+    <div>
+      <p><strong>EcoAedes</strong> — ONG de conscientização sobre o <i>Aedes aegypti</i>.</p>
+      <p>Projeto acadêmico da disciplina DEV. Front-End (Unicid). Material educativo: não substitui consulta nem orientação da unidade de saúde.</p>
+    </div>
+    <div>
+      <p><strong>Navegação rápida</strong></p>
+      <ul>
+        <li><a href="prevencao.html">Varredura da casa</a></li>
+        <li><a href="voluntario.html">Seja voluntário</a></li>
+        <li><a href="doe.html">Apoie a EcoAedes</a></li>
+      </ul>
+    </div>
+    <div>
+      <p><strong>Fontes oficiais</strong></p>
+      <ul>
+        <li><a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/d/dengue">Ministério da Saúde — Dengue</a></li>
+        <li><a href="https://brasil.un.org/pt-br/sdgs">ONU Brasil — Objetivos de Desenvolvimento Sustentável</a></li>
+      </ul>
+      <p>© <span id="ano-atual">2026</span> Equipe EcoAedes.</p>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

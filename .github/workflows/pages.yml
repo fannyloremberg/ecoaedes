@@ -21,13 +21,40 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 22
-      - run: npm install
-      - run: npm run build
+      - name: Preparar o site estático
+        run: |
+          set -euo pipefail
+          mkdir -p _site
+          # Pacote aprovado na raiz, sem build. documentos/ e o app Vite anterior
+          # ficam no repositório e fora do artefato publicado.
+          tar -cf - \
+            README.md \
+            integrantes.txt \
+            index.html \
+            sobre.html \
+            mosquito.html \
+            doencas.html \
+            prevencao.html \
+            noticias.html \
+            multimidia.html \
+            doe.html \
+            voluntario.html \
+            orcamento_hospedagem.html \
+            css \
+            js \
+            img \
+            media \
+            docs \
+            | tar -xf - -C _site
+          test -f _site/index.html
+          test -f _site/css/style.css
+          test -f _site/js/main.js
+          test -f _site/img/logo.svg
+          test -f _site/media/varredura.mp4
+          test -f _site/media/dica.mp3
+          test -f _site/media/varredura.vtt
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: _site
       - id: deployment
         uses: actions/deploy-pages@v4
