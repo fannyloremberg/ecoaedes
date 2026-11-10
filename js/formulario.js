@@ -3,9 +3,11 @@
    1) valida os campos com JavaScript (preventDefault)
    2) mostra mensagem de erro embaixo de cada campo e borda vermelha
    3) salva um rascunho no localStorage e recupera ao recarregar
+   4) guarda cada inscrição enviada no localStorage e mostra a lista na página
    ========================================================= */
 
 const CHAVE_RASCUNHO = 'ecoaedes-rascunho-voluntario';
+const CHAVE_INSCRICOES = 'ecoaedes-inscricoes'; // lista de inscrições enviadas
 
 document.addEventListener('DOMContentLoaded', function () {
   const formulario = document.querySelector('#form-voluntario');
@@ -14,6 +16,38 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   const sucesso = document.querySelector('#msg-sucesso');
   const avisoRascunho = document.querySelector('#aviso-rascunho');
+
+  // ---------- Lista de inscrições salvas no localStorage ----------
+  const listaInscricoes = document.querySelector('#lista-inscricoes');
+  const totalInscricoes = document.querySelector('#total-inscricoes');
+  const botaoApagar = document.querySelector('#apagar-inscricoes');
+
+  function mostrarInscricoes() {
+    const inscricoes = JSON.parse(localStorage.getItem(CHAVE_INSCRICOES) || '[]');
+    listaInscricoes.innerHTML = '';
+    totalInscricoes.textContent = inscricoes.length === 0
+      ? 'Nenhuma inscrição salva ainda.'
+      : inscricoes.length + (inscricoes.length === 1 ? ' inscrição salva.' : ' inscrições salvas.');
+    botaoApagar.hidden = inscricoes.length === 0;
+    inscricoes.forEach(function (item) {
+      const li = document.createElement('li');
+      const titulo = document.createElement('strong');
+      titulo.textContent = item.nome + ' (' + item.cidade + ')';
+      const detalhe = document.createElement('span');
+      detalhe.textContent = item.area + ' · ' + item.disponibilidade + ' · ' + item.email + ' · ' + item.data;
+      li.appendChild(titulo);
+      li.appendChild(document.createElement('br'));
+      li.appendChild(detalhe);
+      listaInscricoes.appendChild(li);
+    });
+  }
+
+  botaoApagar.addEventListener('click', function () {
+    localStorage.removeItem(CHAVE_INSCRICOES);
+    mostrarInscricoes();
+  });
+
+  mostrarInscricoes();
 
   // ---------- Funções que mostram e limpam erros ----------
   function mostrarErro(campo, texto) {
@@ -196,7 +230,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Tudo certo: mostra a mensagem, limpa o formulário e apaga o rascunho
     const nome = formulario.elements.nome.value.trim().split(' ')[0];
-    sucesso.textContent = 'Obrigado, ' + nome + '! Recebemos sua inscrição (demonstração: nenhum dado sai do seu navegador).';
+    // Salva a inscrição na lista do localStorage (fica guardada neste navegador)
+    const inscricoes = JSON.parse(localStorage.getItem(CHAVE_INSCRICOES) || '[]');
+    inscricoes.push({
+      nome: formulario.elements.nome.value.trim(),
+      email: formulario.elements.email.value.trim(),
+      telefone: formulario.elements.telefone.value.trim(),
+      cidade: formulario.elements.cidade.value.trim(),
+      area: formulario.elements.area.options[formulario.elements.area.selectedIndex].text,
+      disponibilidade: formulario.querySelector('input[name="disponibilidade"]:checked').nextElementSibling.textContent,
+      mensagem: formulario.elements.mensagem.value.trim(),
+      data: new Date().toLocaleString('pt-BR')
+    });
+    localStorage.setItem(CHAVE_INSCRICOES, JSON.stringify(inscricoes));
+    mostrarInscricoes();
+
+    sucesso.textContent = 'Obrigado, ' + nome + '! Sua inscrição foi salva neste navegador (localStorage) e aparece na lista abaixo.';
     formulario.reset();
     localStorage.removeItem(CHAVE_RASCUNHO);
     avisoRascunho.textContent = '';
